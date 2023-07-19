@@ -155,8 +155,6 @@ namespace DHCP.Server
                     dns.Add(IPAddress.Parse(defaultSettings.DnsServer2));
                 return dns;
             }
-
-
         }
 
         private string NotEmptyString(string value1, string value2)

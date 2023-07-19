@@ -9,6 +9,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DHCP", "DHCP", "{9619CDBA-1
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DHCP.Server", "DHCP.Server\DHCP.Server.csproj", "{5568E530-CF6E-430B-8574-670B8573FB1C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DHCP.ServerRunner", "DHCP.ServerRunner\DHCP.ServerRunner.csproj", "{0C4F0152-1540-45A3-A4AC-116C2CE5F4EF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,10 @@ Global
 		{5568E530-CF6E-430B-8574-670B8573FB1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5568E530-CF6E-430B-8574-670B8573FB1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5568E530-CF6E-430B-8574-670B8573FB1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C4F0152-1540-45A3-A4AC-116C2CE5F4EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C4F0152-1540-45A3-A4AC-116C2CE5F4EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C4F0152-1540-45A3-A4AC-116C2CE5F4EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C4F0152-1540-45A3-A4AC-116C2CE5F4EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -30,6 +36,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{169C2618-A649-4FAC-848F-C2F429FCE140} = {9619CDBA-1F0D-4C67-A4BB-7BD90AD14BEE}
 		{5568E530-CF6E-430B-8574-670B8573FB1C} = {9619CDBA-1F0D-4C67-A4BB-7BD90AD14BEE}
+		{0C4F0152-1540-45A3-A4AC-116C2CE5F4EF} = {9619CDBA-1F0D-4C67-A4BB-7BD90AD14BEE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {608ADCC8-E531-4736-A54B-94C8687E3F2F}
