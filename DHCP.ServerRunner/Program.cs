@@ -1,12 +1,14 @@
 ﻿using DHCP.Common.Events;
+using DHCP.Common.Models;
 using DHCP.Server;
+using DotNetProjects.DhcpServer;
+using Newtonsoft.Json;
 
-var site = new DHCP.Common.Models.Site();
-site.Details = new DHCP.Common.Models.SiteDetails();
-site.Details.DhcpPools = new List<DHCP.Common.Models.DhcpPool>();
-site.Details.DhcpPools.Add(new DHCP.Common.Models.DhcpPool { Id = 1});
-site.Details.DefaultPoolId = 1;
-site.Devices = new List<DHCP.Common.Models.Device>();
+var g = Guid.NewGuid().ToString();
+
+var RootDir = @"C:\Users\dhemken\AppData\Roaming\Convergence\DHCP\";
+var json = File.ReadAllText($"{RootDir}Site.DHCP.json");
+var site = JsonConvert.DeserializeObject<Site>(json);
 var server = new DhcpServer(site);
 server.DhcpEvent += LogEventMessage;
 Console.WriteLine("Starting Server...");
@@ -20,4 +22,15 @@ void LogEventMessage(object? sender, DhcpEventArgs e)
 {
     Console.WriteLine(e.EventLog);
     Console.WriteLine("--------------------------------------------");
+
+    try
+    {
+
+        var RootDir = @"C:\Users\dhemken\AppData\Roaming\Convergence\DHCP\";
+        if (e.Request.GetMsgType() == DHCPMsgType.DHCPREQUEST)
+            File.WriteAllText($"{RootDir}Site.DHCP.json", JsonConvert.SerializeObject(site, Formatting.Indented));
+    } catch(Exception ex)
+    {
+
+    }
 }

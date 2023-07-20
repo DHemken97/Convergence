@@ -13,6 +13,7 @@
         public DhcpSettings Settings { get; set; }
         public void AddLease(string mac, string ip)
         {
+            ActiveLeases.Remove(mac);
             ActiveLeases.Add(mac, ip);  
         }
         public string GetNextIp()
@@ -20,7 +21,7 @@
             for (int i = Start; i <= End; i++)
             {
                 var ip = BuildIp(i);
-                if (ActiveLeases.All(lease => lease.Key != ip))
+                if (ActiveLeases.All(lease => lease.Value != ip))
                     return ip;
             }
             return "255.255.255.255";
